@@ -1,0 +1,19 @@
+name: "Buttervale Kiwix Server"
+version: "0.1.0"
+slug: "buttervale_kiwix"
+description: "Offline ZIM library server for Buttervale"
+url: "https://github.com/geekerr-sketch/buttervale-ha-apps"
+arch:
+  - amd64
+startup: services
+boot: auto
+init: false
+map:
+  - type: share
+    read_only: true
+ports:
+  8080/tcp: 8085
+ports_description:
+  8080/tcp: "Kiwix web server"
+options: {}
+schema: {}
