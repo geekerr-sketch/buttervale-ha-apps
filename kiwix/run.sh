@@ -2,19 +2,19 @@
 set -eu
 
 ZIM_DIR="/share/kiwix"
-mkdir -p /tmp/kiwix
 
 echo "Starting Buttervale Kiwix Server..."
+echo "Looking for ZIM files in $ZIM_DIR"
 
 if [ ! -d "$ZIM_DIR" ]; then
-    echo "ZIM directory not found: $ZIM_DIR"
+    echo "ERROR: ZIM directory not found."
     exit 1
 fi
 
 set -- "$ZIM_DIR"/*.zim
 
 if [ ! -f "$1" ]; then
-    echo "No ZIM files found in $ZIM_DIR"
+    echo "ERROR: No ZIM files found in $ZIM_DIR"
     exit 1
 fi
 
